@@ -18,7 +18,7 @@
  *
  */
 function getCurrentFunctionName() {
-  throw new Error('Not implemented');
+  return getCurrentFunctionName.name;
 }
 
 /**
@@ -32,8 +32,11 @@ function getCurrentFunctionName() {
  *   getFunctionBody(hiHello) => "function hiHello() { console.log('hello world'); }"
  *
  */
-function getFunctionBody(/* func */) {
-  throw new Error('Not implemented');
+function getFunctionBody(func) {
+  if (!func) {
+    return '';
+  }
+  return func.toString();
 }
 
 /**
@@ -52,6 +55,14 @@ function getFunctionBody(/* func */) {
  */
 function getArgumentsCount(/* funcs */) {
   throw new Error('Not implemented');
+
+  // return funcs.map((func) => {
+  //   console.log(func.arguments);
+  //   if (!func.arguments) {
+  //     return 0;
+  //   }
+  //   return func.arguments.length;
+  // });
 }
 
 /**
